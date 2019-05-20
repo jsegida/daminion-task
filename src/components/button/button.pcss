@@ -1,0 +1,87 @@
+@import "../constants.pcss";
+
+:root {
+    --button--line-height: 1em;
+    --button--padding-vertical: 1.2143em;
+}
+
+.button {
+    position: relative;
+    line-height: var(--button--line-height);
+    font-family: inherit;
+    font-size: 0.875em;
+    padding: var(--button--padding-vertical) 4.2857em;
+    border-radius: calc(0.5 * var(--button--line-height) + var(--button--padding-vertical));
+    border: none;
+}
+
+.button::-moz-focus-inner {
+    border: none;
+}
+
+.button:focus {
+    outline: var(--outline);
+}
+
+.button_default {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.button_default:hover {
+    background-color: hsl(0, 0%, 70%);
+}
+
+.button_primary {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: hsl(129, 53%, 43%);
+}
+
+.button_primary:hover {
+    background-color: hsl(129, 53%, 25%);
+}
+
+.button_loading {
+    overflow: hidden;
+    animation-name: fake-loading;
+}
+
+@keyframes fake-loading {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.button_loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    animation-name: loading;
+}
+
+@keyframes loading {
+    33% {
+        opacity: 0.3;
+    }
+
+    66% {
+        opacity: 0;
+    }
+}
+
+.button_loading,
+.button_loading::after {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}

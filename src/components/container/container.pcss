@@ -1,0 +1,22 @@
+:root {
+    --container__loader--margin-vertical: 5em;
+}
+
+.container {
+    padding: 1.125em;
+    border: 0.8125em solid hsl(0, 0%, 92%);
+    background-color: hsl(0, 0%, 97%);
+}
+
+.container__item + .container__item {
+    margin-top: 1em;
+}
+
+.container__loader {
+    margin-top: var(--container__loader--margin-vertical);
+    margin-bottom: var(--container__loader--margin-vertical);
+}
+
+.container__error {
+    margin: 4em 1em;
+}

@@ -1,0 +1,3 @@
+export const ADD_PRODUCTS = "ADD_PRODUCTS";
+export const CHOOSE_PRODUCT = "CHOOSE_PRODUCT";
+export const SET_ORDER_STATUS = "SET_ORDER_STATUS";

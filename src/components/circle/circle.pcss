@@ -1,0 +1,41 @@
+@import "../constants.pcss";
+
+:root {
+    --circle__loader--size: 79px;
+}
+
+.circle {
+    position: relative;
+    border: 0.1875em solid var(--item-dark--color);
+}
+
+.circle__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--circle__loader--size);
+    height: var(--circle__loader--size);
+    background-color: var(--item--color);
+    animation: blink 1s ease-in-out infinite;
+}
+
+.circle,
+.circle__loader {
+    border-radius: 50%;
+}
+
+.circle__inner-space {
+    display: block;
+    width: 100%;
+}
+
+@keyframes blink {
+    33% {
+        opacity: 0.7;
+    }
+
+    66% {
+        opacity: 1;
+    }
+}

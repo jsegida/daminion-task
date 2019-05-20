@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <title>Daminion Software test</title>
+        <% for (const script of htmlWebpackPlugin.files.js) { %>
+            <script src="/<%= script %>" async></script>
+        <% } %>
+    </head>
+    <body class="page">
+        <main>
+            <section>
+                <header class="header">
+                    <h1 class="h h1">Tasks</h1>
+                </header>
+                <section>
+                    <header class="header">
+                        <h2 class="h">Order</h2>
+                    </header>
+                    <div class="container page__container" id="orderContainer">
+                        <div class="loader container__loader">
+                            <span class="loader__square loader__square_first"></span>
+                            <span class="loader__square loader__square_second"></span>
+                            <span class="loader__square loader__square_third"></span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <header class="header">
+                        <h2 class="h">Circle</h2>
+                    </header>
+                    <div class="container page__container">
+                        <div class="container__item">
+                            <div class="radio-button" id="followRadioButton">
+                                <input
+                                    class="radio-button__input"
+                                    id="followRadioButtonInput"
+                                    name="behavior"
+                                    type="radio"
+                                    value="follow"
+                                    checked/>
+                                <label
+                                    class="radio-button__label radio-button__label_wide radio-button__label_size_default"
+                                    for="followRadioButtonInput">Follow</label>
+                            </div>
+                            <div class="radio-button" id="escapeRadioButton">
+                                <input
+                                    class="radio-button__input"
+                                    id="escapeRadioButtonInput"
+                                    name="behavior"
+                                    type="radio"
+                                    value="escape"/>
+                                <label
+                                    class="radio-button__label radio-button__label_wide radio-button__label_size_default"
+                                    for="escapeRadioButtonInput">Escape</label>
+                            </div>
+                        </div>
+                        <div class="circle container__item" id="circle">
+                            <canvas class="circle__inner-space" width="1" height="1"></canvas>
+                            <div class="circle__loader"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>

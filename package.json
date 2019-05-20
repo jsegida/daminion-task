@@ -1,0 +1,97 @@
+{
+    "name": "daminion",
+    "version": "1.0.0",
+    "description": "Daminion Software test",
+    "scripts": {
+        "start": "webpack-dev-server --open --content-base dist"
+    },
+    "author": "Juriy Segida <segida82@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-transform-runtime": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "babel-eslint": "^10.0.1",
+        "babel-loader": "^8.0.6",
+        "css-loader": "^2.1.1",
+        "eslint": "^5.16.0",
+        "eslint-plugin-compat": "^3.1.1",
+        "html-webpack-plugin": "^3.2.0",
+        "mini-css-extract-plugin": "^0.6.0",
+        "postcss-import": "^12.0.1",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.6.0",
+        "style-ext-html-webpack-plugin": "^4.0.1",
+        "stylelint": "^10.0.1",
+        "stylelint-config-standard": "^18.3.0",
+        "stylelint-no-unsupported-browser-features": "^3.0.2",
+        "webpack": "^4.32.0",
+        "webpack-cli": "^3.3.2",
+        "webpack-dev-server": "^3.4.1",
+        "webpack-manifest-plugin": "^2.0.4"
+    },
+    "eslintConfig": {
+        "parser": "babel-eslint",
+        "extends": [
+            "eslint:recommended"
+        ],
+        "rules": {
+            "compat/compat": 2
+        },
+        "plugins": [
+            "compat"
+        ],
+        "parserOptions": {
+            "ecmaVersion": 2018,
+            "sourceType": "module"
+        },
+        "env": {
+            "node": true,
+            "browser": true,
+            "es6": true
+        },
+        "settings": {
+            "polyfills": [
+                "fetch",
+                "Object.entries",
+                "Promise",
+                "Symbol.iterator",
+                "Array.from"
+            ]
+        }
+    },
+    "stylelint": {
+        "extends": "stylelint-config-standard",
+        "plugins": [
+            "stylelint-no-unsupported-browser-features"
+        ],
+        "rules": {
+            "indentation": 4
+        }
+    },
+    "browserslist": [
+        "> 1%"
+    ],
+    "dependencies": {
+        "bluebird": "^3.5.4",
+        "core-js": "^3.1.0",
+        "element-remove": "^1.0.4",
+        "whatwg-fetch": "^3.0.0"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/env",
+                {
+                    "modules": false
+                }
+            ]
+        ],
+        "plugins": [
+            "@babel/proposal-object-rest-spread",
+            "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-transform-runtime"
+        ]
+    }
+}

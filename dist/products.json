@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "License plan #1",
+        "price": 13,
+        "description": "$13 per license"
+    },
+    {
+        "id": 2,
+        "name": "License plan #2",
+        "price": 22,
+        "description": "$22 per license"
+    },
+    {
+        "id": 3,
+        "name": "License plan #3",
+        "price": 34,
+        "description": "$34 per license"
+    }
+]

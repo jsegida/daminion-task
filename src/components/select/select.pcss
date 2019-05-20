@@ -1,0 +1,56 @@
+@import "../constants.pcss";
+
+:root {
+    --select--height: 1em;
+    --select--padding-vertical: 0.5em;
+    --select--padding-horizontal: 0.3571em;
+    --select--border-size: 0.0714em;
+    --select--arrow-size: 6px;
+}
+
+.select {
+    margin-right: 0;
+    line-height: var(--select--height);
+    padding:
+        var(--select--padding-vertical)
+        calc(var(--select--padding-horizontal) * 2 + var(--select--arrow-size))
+        var(--select--padding-vertical)
+        var(--select--padding-horizontal);
+    height: calc(var(--select--height) + var(--select--padding-vertical) * 2 + var(--select--border-size) * 2);
+    font-family: inherit;
+    font-size: inherit;
+    border: var(--select--border-size) solid hsl(0, 0%, 60%);
+    border-radius: 0.1429em;
+    appearance: none;
+    background-color: white;
+    background-image:
+        url(
+            "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpolygon points='0,0 2,4 4,0'%3E%3C/polygon%3E%3C/svg%3E"
+        );
+    background-repeat: no-repeat;
+    background-size: var(--select--arrow-size) var(--select--arrow-size);
+    background-position: calc(100% - var(--select--padding-horizontal));
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+.select_labeled {
+    margin-left: 0.4286em;
+}
+
+.select:focus {
+    outline: var(--outline);
+}
+
+.select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #333;
+}
+
+@-moz-document url-prefix() {
+    .select {
+        text-indent: -2px;
+    }
+}

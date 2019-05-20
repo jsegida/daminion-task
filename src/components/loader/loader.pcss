@@ -1,0 +1,149 @@
+@import "../constants.pcss";
+
+:root {
+    --loader__square--size: 3em;
+    --loader--gutter-ratio: 0.25;
+}
+
+.loader {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(var(--loader__square--size) * 2 + var(--loader__square--size) * var(--loader--gutter-ratio));
+    height: calc(var(--loader__square--size) * 2 + var(--loader__square--size) * var(--loader--gutter-ratio));
+}
+
+.loader__square {
+    display: inline-block;
+    width: var(--loader__square--size);
+    height: var(--loader__square--size);
+    animation-duration: 2.4s;
+    animation-iteration-count: infinite;
+}
+
+.loader__square_first {
+    background-color: var(--item--color);
+    animation-name: first-square-motion;
+    animation-delay: 0.2s;
+}
+
+.loader__square_second {
+    right: 0;
+    background-color: var(--item-light--color);
+    animation-name: second-square-motion;
+}
+
+.loader__square_third {
+    bottom: 0;
+    left: 0;
+    background-color: var(--item-dark--color);
+    animation-name: third-square-motion;
+    animation-delay: 0.4s;
+}
+
+.loader__square_second,
+.loader__square_third {
+    position: absolute;
+}
+
+@keyframes first-square-motion {
+    8.3333% {
+        transform: translateX(125%) scale(0.5);
+    }
+
+    24.9999% {
+        transform: translateX(125%);
+    }
+
+    33.3332% {
+        transform: translate(125%, 125%) scale(0.5);
+    }
+
+    49.9998% {
+        transform: translate(125%, 125%);
+    }
+
+    58.3331% {
+        transform: translateY(125%) scale(0.5);
+    }
+
+    74.9997% {
+        transform: translateY(125%);
+    }
+
+    83.33% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes second-square-motion {
+    8.3333% {
+        transform: translateY(125%) scale(0.7);
+    }
+
+    24.9999% {
+        transform: translateY(125%);
+    }
+
+    33.3332% {
+        transform: translate(-125%, 125%) scale(0.7);
+    }
+
+    49.9998% {
+        transform: translate(-125%, 125%);
+    }
+
+    58.3331% {
+        transform: translateX(-125%) scale(0.7);
+    }
+
+    74.9997% {
+        transform: translateX(-125%);
+    }
+
+    83.33% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes third-square-motion {
+    8.3333% {
+        transform: translateY(-125%) scale(0.9);
+    }
+
+    24.9999% {
+        transform: translateY(-125%);
+    }
+
+    33.3332% {
+        transform: translate(125%, -125%) scale(0.9);
+    }
+
+    49.9998% {
+        transform: translate(125%, -125%);
+    }
+
+    58.3331% {
+        transform: translateX(125%) scale(0.9);
+    }
+
+    74.9997% {
+        transform: translateX(125%);
+    }
+
+    83.33% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: none;
+    }
+}
